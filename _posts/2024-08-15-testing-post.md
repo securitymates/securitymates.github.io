@@ -4,7 +4,8 @@ date: 2024-08-15 17:50:00 +0800
 categories: [testing, checking]
 tags: [test,blog,check]     # TAG names should always be lowercase
 author: KD
-comments: false
+comments: true
+pin: true
 ---
 
 # Happy Independence Day!
