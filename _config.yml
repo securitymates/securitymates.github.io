@@ -120,9 +120,9 @@ comments:
   # Giscus options › https://giscus.app
   giscus:
     repo: "securitymates/securitymates.github.io"
-    repo_id: "R_kgDOMpVckQ"
+    repo_id: "R_kgDOMj6l1Q"
     category: "General"
-    category_id: "DIC_kwDOMpVckc4Ch_js"
+    category_id: "DIC_kwDOMj6l1c4Ch_nB"
     mapping: # optional, default to 'pathname'
     strict: # optional, default to '0'
     input_position: # optional, default to 'bottom'
