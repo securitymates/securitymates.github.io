@@ -108,7 +108,7 @@ social_preview_image: # string, local or CORS resources
 toc: true
 
 comments:
-  # Global switch for the post comment system. Keeping it empty means disabled.
+  active: giscus
   provider: # [disqus | utterances | giscus]
   # The provider options are as follows:
   disqus:
@@ -120,9 +120,9 @@ comments:
   # Giscus options › https://giscus.app
   giscus:
     repo: "securitymates/comments"
-    repo_id:
+    repo_id: "R_kgDOMpVckQ"
     category: "General"
-    category_id:
+    category_id: "DIC_kwDOMpVckc4Ch_js"
     mapping: # optional, default to 'pathname'
     strict: # optional, default to '0'
     input_position: # optional, default to 'bottom'
