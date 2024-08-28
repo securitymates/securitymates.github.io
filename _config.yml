@@ -119,9 +119,9 @@ comments:
     issue_term: # < url | pathname | title | ...>
   # Giscus options › https://giscus.app
   giscus:
-    repo: # <gh-username>/<repo>
+    repo: "securitymates/comments"
     repo_id:
-    category:
+    category: "General"
     category_id:
     mapping: # optional, default to 'pathname'
     strict: # optional, default to '0'
