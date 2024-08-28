@@ -12,3 +12,5 @@ pin: true
 
 Happy Independence Day!
 Testing Post
+
+{% include comment.html %}
