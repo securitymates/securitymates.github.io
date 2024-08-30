@@ -15,4 +15,7 @@ toc: true
 Happy Independence Day!
 Testing Post
 
+![testing image feature]("assets/img/diagrams/securitymates cover.jpeg")
+_Caption of the image_
+
 {% include comment.html %}
