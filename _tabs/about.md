@@ -31,7 +31,7 @@ Have questions, suggestions, or collaboration ideas? We’d love to hear from yo
 
 - **GitHub:** [securitymates](https://github.com/securitymates)
 - **Twitter:** [securitymates](https://x.com/securitymates)
-- **LinkedIn:** [security-mates](https://www.linkedin.com/company/security-mates)
+- **LinkedIn:** [securitymates](https://www.linkedin.com/company/securitymates)
 - **Instagram:** [securitymates](https://www.instagram.com/securitymates)
 
 ---
