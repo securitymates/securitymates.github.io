@@ -6,6 +6,8 @@ tags: [test,blog,check]     # TAG names should always be lowercase
 author: KD
 comments: true
 pin: true
+image: "assets/img/diagrams/securitymates cover.jpeg"
+toc: true
 ---
 
 # Happy Independence Day!
