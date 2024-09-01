@@ -27,17 +27,17 @@ Thank you for visiting our blog. We hope you find our content valuable and infor
 
 ## Our Team
 
-- [Kundan Dhupkar](https://www.linkedin.com/in/kundan-dhupkar)
-- [Lakshay Panwar](https://www.linkedin.com/in/lakshay-panwar-7672a321a/)
-- [Adinath Jankar](https://www.linkedin.com/in/adinath-jankar-130a40285/)
+- [**Kundan Dhupkar**](https://www.linkedin.com/in/kundan-dhupkar)
+- [**Lakshay Panwar**](https://www.linkedin.com/in/lakshay-panwar-7672a321a/)
+- [**Adinath Jankar**](https://www.linkedin.com/in/adinath-jankar-130a40285/)
 
 ## Get in Touch
 
 Have questions, suggestions, or collaboration ideas? We’d love to hear from you. Reach out to us via [securewithmates@gmail.com](mailto:securewithmates@gmail.com) or connect with us on 
 
-- **GitHub:** [securitymates](https://github.com/securitymates)
-- **Twitter:** [securitymates](https://x.com/securitymates)
-- **LinkedIn:** [securitymates](https://www.linkedin.com/company/securitymates)
-- **Instagram:** [securitymates](https://www.instagram.com/securitymates)
+-  [**GitHub**](https://github.com/securitymates)
+-  [**Twitter**](https://x.com/securitymates)
+-  [**LinkedIn**](https://www.linkedin.com/company/securitymates)
+-  [**Instagram**](https://www.instagram.com/securitymates)
 
 ---
