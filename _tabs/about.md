@@ -25,6 +25,12 @@ We envision a world where digital spaces are secure, and everyone has the knowle
 
 Thank you for visiting our blog. We hope you find our content valuable and informative. Feel free to connect with us and join our journey in securing the digital world.
 
+## Our Team
+
+- [Kundan Dhupkar](https://www.linkedin.com/in/kundan-dhupkar)
+- [Lakshay Panwar](https://www.linkedin.com/in/lakshay-panwar-7672a321a/)
+- [Adinath Jankar](https://www.linkedin.com/in/adinath-jankar-130a40285/)
+
 ## Get in Touch
 
 Have questions, suggestions, or collaboration ideas? We’d love to hear from you. Reach out to us via [securewithmates@gmail.com](mailto:securewithmates@gmail.com) or connect with us on 
