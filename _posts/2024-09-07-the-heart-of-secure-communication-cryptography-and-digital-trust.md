@@ -71,7 +71,7 @@ User A will decrypt the digital signature using User B's public key and then has
 
 In short a digital signature is used to validate the integrity of the data.
 
-![Digital Signature Verification](assets/img/diagrams/writeup_one/Digital_Signature.svg)
+![Digital Signature Verification](assets/img/diagrams/writeup_one/Digital_Signature.png)
 
 _Digital Signature Workflow (From Docusign)_
 
