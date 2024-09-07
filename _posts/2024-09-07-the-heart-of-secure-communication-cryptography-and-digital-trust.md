@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Cryptography and Digital Trust
+title: "Cryptography and Digital Trust"
 date: 2024-09-07 19:00:00 +0800
 categories: [cryptography, cybersecurity]
 tags: [cryptography, symmetric key, asymmetric key, digital signature, digital certificate, encryption, decryption, kundan dhupkar]
