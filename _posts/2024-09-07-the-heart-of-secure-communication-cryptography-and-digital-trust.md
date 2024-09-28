@@ -1,7 +1,7 @@
 ---
 title: "The Heart of Secure Communication: Cryptography and Digital Trust"
 date: 2024-09-07 13:00:00 +0800
-categories: [cryptography, cybersecurity]
+categories: [cybersecurity, cryptography]
 tags: [cryptography, symmetric key, asymmetric key, digital signature, digital certificate, encryption, decryption, kundan dhupkar]
 author: KD
 image: "assets/img/diagrams/writeup_one/title.png"
