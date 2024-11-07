@@ -91,6 +91,7 @@ _Creating Partition_
    ```bash
    sudo mkfs.ext4 /dev/sdX (replace X with your drive letter)
    ```
+
 ![Formatting with Filesystem](assets/img/diagrams/writeup_three/disk_cmd2.png)
 
 _Formatting with Filesystem_
