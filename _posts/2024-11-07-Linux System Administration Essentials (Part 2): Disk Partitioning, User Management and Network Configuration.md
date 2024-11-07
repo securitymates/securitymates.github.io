@@ -55,9 +55,9 @@ Newer systems now use the GUID Partition Table (GPT), which supports a much high
 
 Each partition can be formatted with a file system, which determines how data is stored and retrieved. Common Linux file systems include:
 
-1.**ext4**: Default for many Linux distributions, supports large files and journaling.
-2.**xfs**: Good for high-performance tasks.
-3.**btrfs**: Offers advanced features like snapshots and dynamic resizing.
+1. **ext4**: Default for many Linux distributions, supports large files and journaling.
+2. **xfs**: Good for high-performance tasks.
+3. **btrfs**: Offers advanced features like snapshots and dynamic resizing.
 
 
 **Creating Partitions:**
