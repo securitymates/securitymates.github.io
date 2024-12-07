@@ -309,13 +309,13 @@ Some of the reasons why kernel updates are important:
 
 ### **Steps involved in Kernel Update:**
 
-1. **Check Current Kernel Version**
+**1. Check Current Kernel Version**
    
   ```bash
    uname -r
    ```
 
-2. **Check for Available Updates**
+**2. Check for Available Updates**
 
 Debian/Ubuntu-based systems: Use apt or apt-get to update the kernel. For example:
 
@@ -331,13 +331,13 @@ To check for the latest available kernel:
    sudo apt-cache search linux-image
    ```
 
-3. **Install New Kernel Version**
+**3. Install New Kernel Version**
 
   ```bash
    sudo apt install linux-image-<version>
    ```
 
-4. **Reboot the System**
+**4. Reboot the System**
 
 After the kernel update is installed, the system must be rebooted to load the new kernel. You can reboot the system by using:   
  
@@ -345,7 +345,7 @@ After the kernel update is installed, the system must be rebooted to load the ne
    sudo reboot
    ```
 
-5. **Post-update cleanup**
+**5. Post-update cleanup**
 
 Once the kernel has been updated, there may be old kernels left on the system. It's a good practice to clean up unnecessary kernels to free up disk space. This can be done with:
 
