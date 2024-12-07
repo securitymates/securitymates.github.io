@@ -194,7 +194,7 @@ Over time, unused packages and cache files accumulate. To remove these, use:
 ---
 
 
-### 2. **DNF (Dandified YUM)**
+### **DNF (Dandified YUM)**
 
 DNF is the successor to **YUM (Yellowdog Updater Modified)** and represents the next-generation package manager designed to be faster, more reliable, and efficient. It manages software packages by automating tasks like installation, removal, updates, and dependency resolution.
 
