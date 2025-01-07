@@ -42,7 +42,7 @@ The SameSite attribute can take the following values, which control cookie behav
    - Cookies are not sent for requests from other sites.
 
 2. **SameSite=Lax**
-   - Cookies are sent for GET requests if they are part of a top-level navigation, such as clicking a link or submitting a form.
+   - Cookies are sent for GET requests if they are part of a top-level navigation, such as clicking a link.
    - GET requests for cross-site resources (e.g., images, scripts) will not send the cookie unless triggered by top-level navigation.
    - **Default Behavior:** If the SameSite attribute is not specified, this value is applied.
 
