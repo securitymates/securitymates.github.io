@@ -119,6 +119,12 @@ It's important to understand that when SOP is enforced the response can't be rea
 - As it is not same-origin but cross-origin, browser will not allow to read the response from b.com
 (So it gets blocked on browser level)
 
+### Preventing Web Attacks
+
+The Same-Origin Policy (SOP) is effective in preventing Cross-Site Scripting (XSS) attacks, as it restricts malicious scripts from accessing sensitive data or resources from different origins. However, SOP does not prevent Cross-Site Request Forgery (CSRF) attacks. In CSRF, the attacker does not need to read the response from the server, but instead exploits the user's authenticated session to perform unintended actions. Therefore, while SOP is crucial for XSS prevention, additional measures such as anti-CSRF tokens are necessary to defend against CSRF attacks.
+
+---
+
 #### Exceptions to SOP
 There are some exceptions to SOP. One of them is **CORS (Cross-Origin Resource Sharing)**.
 
