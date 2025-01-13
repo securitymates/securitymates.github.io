@@ -2,12 +2,12 @@
 title: "SameSite vs. Same-Origin: Breaking Down Web Security Confusions and Nuances"
 date: 2025-01-07 13:00:00 +0800
 categories: [Cyber Security, Web Security]
-tags: [web security, same-origin policy, same-site cokies, cookies, browser securtiy, HTTP Headers, CSRF, XSS, web application security, security best practices, kundan dhupkar]
+tags: [web security, same-origin policy, same-site cokies, cookies, browser securtiy, HTTP Headers, CSRF, web application security, security best practices, kundan dhupkar]
 author: KD
 comments: true
 image: "assets/img/diagrams/writeup_five/title.png"
 toc: true
-description: This blog simplifies the key differences between SameSite and Same-Origin policies, focusing on their impact on web security and how they prevent common vulnerabilities like CSRF and XSS.
+description: This blog simplifies the key differences between SameSite and Same-Origin policies, focusing on their impact on web security and how they prevent common vulnerabilities like CSRF.
 ---
 
 ## Introduction
@@ -121,7 +121,7 @@ It's important to understand that when SOP is enforced the response can't be rea
 
 ### Preventing Web Attacks
 
-The Same-Origin Policy (SOP) is effective in preventing Cross-Site Scripting (XSS) attacks, as it restricts malicious scripts from accessing sensitive data or resources from different origins. However, SOP does not prevent Cross-Site Request Forgery (CSRF) attacks. In CSRF, the attacker does not need to read the response from the server, but instead exploits the user's authenticated session to perform unintended actions. Therefore, while SOP is crucial for XSS prevention, additional measures such as anti-CSRF tokens are necessary to defend against CSRF attacks.
+The Same-Origin Policy (SOP) does not prevent Cross-Site Request Forgery (CSRF) attacks. In CSRF, the attacker does not need to read the response from the server, but instead exploits the user's authenticated session to perform unintended actions. Therefore, additional measures such as anti-CSRF tokens are necessary to defend against CSRF attacks.
 
 ---
 
