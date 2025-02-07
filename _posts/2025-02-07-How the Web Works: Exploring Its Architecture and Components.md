@@ -80,7 +80,7 @@ There are several types of DNS servers that play different roles in resolving do
 4. Root Nameserver
 - The root nameservers are at the highest level of the DNS hierarchy. They do not contain specific domain records but direct DNS queries to the appropriate TLD nameservers.
 
-![DNS Resolution](assets/img/diagrams/writeup_three/dns_resolution.png)
+![DNS Resolution](assets/img/diagrams/writeup_six/dns_resolution.png)
 
 _From researchgate.net_
 
@@ -150,7 +150,7 @@ A **proxy** is an intermediary that relays requests between two parties. It can 
 4. Backend server processes the request and responds.
 5. Reverse proxy sends the response to the client.
 
-![Reverse Proxy](assets/img/diagrams/writeup_three/reverse_proxy.png)
+![Reverse Proxy](assets/img/diagrams/writeup_six/reverse_proxy.png)
 
 _From imperva.com_
 
@@ -180,7 +180,7 @@ The Load Balancer decides which server should handle a request using different a
 - **Weighted Round Robin**
 - **Least Response Time**  
 
-![Load Balancer](assets/img/diagrams/writeup_three/load_balancer.png)
+![Load Balancer](assets/img/diagrams/writeup_six/load_balancer.png)
 
 _From geeksforgeeks.org_
 
@@ -211,7 +211,7 @@ A **CDN** is a network of **edge servers** that cache and serve content closer t
 - **Network congestion**
 - **Server load**
 
-![Content Delivery Network(CDN)](assets/img/diagrams/writeup_three/cdn.png)
+![Content Delivery Network(CDN)](assets/img/diagrams/writeup_six/cdn.png)
 
 _From cloudns.net_
 
@@ -239,7 +239,7 @@ Filtering Process:
 - Decision is Made : The request is either blocked, allowed, or flagged for review.
 - Web Server Processes Safe Requests : If allowed, the request reaches the web server as usual.
 
-![Web Application Firewall(WAF)](assets/img/diagrams/writeup_three/waf.png)
+![Web Application Firewall(WAF)](assets/img/diagrams/writeup_six/waf.png)
 
 _From indusface.com_
 
