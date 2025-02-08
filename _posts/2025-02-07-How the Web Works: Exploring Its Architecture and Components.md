@@ -20,7 +20,7 @@ Many people have a basic idea of the client-server architecture and may know tha
 
 Understanding these components is crucial from a web security perspective because each layer introduces potential attack vectors.  
 
-In this blog, I’ll cover most of these components to give you a basic idea about different elements of web architecture, their working, and how they impact web performance and reliability.
+In this blog, I’ll cover most of these components to give you a basic idea about different elements of web architecture, their working and how they impact web performance and reliability.
 
 ---
 
@@ -40,7 +40,7 @@ Some of the main components of a browser include:
 - **User Interface (UI):** The visible part (address bar, back/forward buttons, etc.)
 - **Rendering Engine:** Converts HTML and CSS into a visual display.
 - **JavaScript Engine:** Executes JavaScript code to make websites interactive.
-- **Browser Storage:** Stores cached files, cookies, and session data.  
+- **Browser Storage:** Stores cached files, cookies and session data.  
 
 Now that we understand what a browser does, let's dive into what happens when you enter a URL in the address bar.
 
@@ -133,7 +133,7 @@ Exposing a web server directly to the internet is risky. Attackers can launch **
 
 ### Proxy
 
-A **proxy** is an intermediary that relays requests between two parties. It can be used to hide identities, filter traffic, cache content, distribute load, or improve security. There are two main types:
+A **proxy** is an intermediary that relays requests between two parties. It can be used to hide identities, filter traffic, cache content, distribute load or improve security. There are two main types:
 
 1. **Forward Proxy**  
    - Sits between clients and the internet.
@@ -205,7 +205,9 @@ Latency increases when:
 
 ## Content Delivery Network (CDN)
 
-A **CDN** is a network of **edge servers** that cache and serve content closer to users. This reduces:
+A **CDN** is a network of **edge servers** that cache and serve content closer to users. Edge servers are geographically distributed servers in a Content Delivery Network (CDN) that cache and serve content closer to users.
+
+This reduces:
 
 - **Geographical latency**
 - **Network congestion**
@@ -234,7 +236,7 @@ A WAF inspects incoming HTTP/S requests and outgoing responses based on predefin
 
 Filtering Process:
 - User Sends an HTTP Request : A client (browser, API, mobile app) sends a request to a web server.
-- WAF Intercepts & Analyzes : The WAF examines request headers, body, and parameters.
+- WAF Intercepts & Analyzes : The WAF examines request headers, body and parameters.
 - WAF Applies Rules : Based on pre-configured rules (signature-based, behavior-based, etc.), WAF determines if the request is safe.
 - Decision is Made : The request is either blocked, allowed, or flagged for review.
 - Web Server Processes Safe Requests : If allowed, the request reaches the web server as usual.
@@ -250,7 +252,7 @@ Popular WAFs include **Cloudflare WAF, AWS WAF, Imperva WAF etc.**
 
 ## Ideal Web Request Flow
 
-When users make a request to a website, a well-organized flow ensures that the request is processed efficiently, securely, and quickly. This flow depends on various components working together to handle traffic, protect the servers, and deliver content in the most optimal way.
+When users make a request to a website, a well-organized flow ensures that the request is processed efficiently, securely and quickly. This flow depends on various components working together to handle traffic, protect the servers and deliver content in the most optimal way.
 
 When all components are in place, an ideal request flow looks like:
 
@@ -294,7 +296,7 @@ Response Flow (Reverse Process)
 
 ## Final Thoughts
 
-This blog covered key components of web architecture and how they impact security. There are additional topics like **Microservices, Containerization, and Cloud Infrastructure**, which I’ll cover in another blog.  
+This blog covered key components of web architecture and how they impact security. There are additional topics like **Microservices, Containerization and Cloud Infrastructure**, which I’ll cover in some another blog.  
 
 If you find any mistakes or have suggestions, feel free to provide feedback. I’m always open to learning and improving. Stay tuned for more insightful cybersecurity blogs. Follow us for updates! 🚀  
 
