@@ -27,12 +27,5 @@ Thank you for visiting our blog. We hope you find our content valuable and infor
 
 ## Get in Touch
 
-Have questions, suggestions, or collaboration ideas? We’d love to hear from you. Reach out to us via [securewithmates@gmail.com](mailto:securewithmates@gmail.com) or connect with us on 
-
--  [**GitHub**](https://github.com/securitymates)
--  [**Twitter**](https://x.com/securitymates)
--  [**LinkedIn**](https://www.linkedin.com/company/securitymates)
--  [**Instagram**](https://instagram.com/securitymates)
--  [**YouTube**](https://youtube.com/@SecurityMates)
-
+Have questions, suggestions, or collaboration ideas? We’d love to hear from you. Reach out to us via [securewithmates@gmail.com](mailto:securewithmates@gmail.com)
 ---
