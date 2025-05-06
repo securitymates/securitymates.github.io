@@ -1,6 +1,6 @@
 ---
 title: "Understanding Content Security Policy (CSP): How it Works and Why It Matters"
-date: 2025-05-07 00:00:00 +0800
+date: 2025-05-07 00:00:00 +0530
 categories: [Cyber Security, Web Security]
 tags: [Web Security, Content Security Policy, CSP, Cross Site Scripting, XSS, XSS Protection, Web Application Security, HTTP Headers, Cybersecurity, Browser Security, CSP Header, Frontend Security, Web Development Best Practices, kundan dhupkar]
 author: KD
