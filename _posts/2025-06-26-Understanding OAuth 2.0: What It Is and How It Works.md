@@ -256,7 +256,7 @@ client_secret=secret789
 Now that we’ve understood the Authorization Code flow, let’s look at how it can be made more secure for public clients like mobile and SPA applications using **PKCE (Proof Key for Code Exchange)**.
 
 ## **PKCE (Proof Key for Code Exchange)**
-The Authorization Code Grant Type can be enhanced with **PKCE** (RFC 7636) to make it more secure, especially for public clients (e.g., single-page apps, mobile apps) that cannot securely store a client secret. PKCE prevents authorization code interception attacks by adding an extra layer of verification.
+The Authorization Code Grant Type can be enhanced with **PKCE** ([RFC 7636](https://datatracker.ietf.org/doc/html/rfc7636)) to make it more secure, especially for public clients (e.g., single-page apps, mobile apps) that cannot securely store a client secret. PKCE prevents authorization code interception attacks by adding an extra layer of verification.
 
 ### **How PKCE Works**
 1. The client generates a random string called the `code_verifier`.
