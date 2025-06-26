@@ -467,7 +467,7 @@ Authorization: Bearer ghi789
 
 ## Resource Owner Password Credentials Grant
 
-![Resource Owner Password Credentials Grant Type Requests Flow](assets/img/diagrams/writeup_eight/ROPC.svg)
+![Resource Owner Password Credentials Grant Type Requests Flow](assets/img/diagrams/writeup_eight/ROPC.png)
 
 _From Microsoft_
 
@@ -623,19 +623,15 @@ For example,
 - Store the `client_secret` securely.
 
 3. **Use `state` parameter to prevent CSRF**
-
 - The `state` parameter is a random string sent in the authorization request and returned in the redirect to prevent **Cross-Site Request Forgery (CSRF)** attacks.
 
 4. **Limiting Scopes**
-
 - It follows the principle of least privilege, reducing the impact of a compromised token.
 
 5. **Secure Token Storage and Transmission**
-
 - Store access token securely, never store them in browser local storage or session storage and transmit them only over HTTPS.
 
 6. **Use Short Lived Access Tokens**
-
 - Use of short lived access tokens reduce the window of opportunity for misuse if compromised.
 
 7. There are many more best practices like **validate tokens, implement token revocation if they are compromised or no longer needed** etc.
