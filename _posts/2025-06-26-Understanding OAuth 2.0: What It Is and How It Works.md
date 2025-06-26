@@ -118,7 +118,7 @@ Now, let’s take a closer look at these OAuth flows (grant types) in more detai
 
 ## Authorization Code Grant Type
 
-![Authorization Code Grant Type Requests Flow](assets/img/diagrams/writeup_eight/AuthCode.jpeg)
+![Authorization Code Grant Type Requests Flow](assets/img/diagrams/writeup_eight/AuthCode.jpg)
 _From PortSwigger_
 
 The Authorization Code Grant Type in short follows a two-step process:
@@ -294,7 +294,7 @@ PKCE ensures that even if an attacker intercepts the authorization code, they ca
 
 ## Implicit Grant (Deprecated)
 
-![Implicit Grant Type Requests Flow](assets/img/diagrams/writeup_eight/ImplicitGrant.jpeg)
+![Implicit Grant Type Requests Flow](assets/img/diagrams/writeup_eight/ImplicitGrant.jpg)
 _From PortSwigger_
 
 The Implicit Grant Type is one of the grant types defined in OAuth 2.0, tailored for clients running in environments where securing a client secret is not feasible.
