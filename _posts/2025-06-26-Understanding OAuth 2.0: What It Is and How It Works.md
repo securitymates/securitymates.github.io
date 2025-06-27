@@ -12,15 +12,15 @@ description: Learn the core concepts of OAuth 2.0 in a simple and structured way
 
 ## Introduction
 
-While browsing the internet, you’ve probably come across a feature that lets you log in using your social media accounts. For those who are unfamiliar, this functionality uses a framework called **OAuth**.
+While browsing the internet, you've probably come across a feature that lets you log in using your social media accounts. For those who are unfamiliar, this functionality uses a framework called **OAuth**.
 
-If you’ve ever clicked on “Login with Google” or seen a prompt saying “Allow access to my account,” you’ve already interacted with OAuth even if you didn’t realize it. It’s a modern authorization framework designed to simplify login and access processes.
+If you've ever clicked on "Login with Google" or seen a prompt saying "Allow access to my account," you've already interacted with OAuth even if you didn't realize it. It's a modern authorization framework designed to simplify login and access processes.
 
 But as security enthusiasts, what matters more is that OAuth also introduces a new **attack surface**. 
 
 Before we get into those vulnerabilities, this blog will help you first understand **what OAuth 2.0 is** and **how it works under the hood** in web applications. This foundational understanding is essential before diving into the more advanced security aspects.
 
-So let’s get started.
+So let's get started.
 
 ---
 
@@ -34,7 +34,7 @@ Note that it is an authorization framework and **NOT** an authentication framewo
 
 ## Key Terminologies
 
-Before we dive into how OAuth works, let’s first understand some important terminologies that will be used throughout this blog:
+Before we dive into how OAuth works, let's first understand some important terminologies that will be used throughout this blog:
 
 1. **Client Application**:  
    The website or web application that wants to access the user's data.
@@ -43,7 +43,7 @@ Before we dive into how OAuth works, let’s first understand some important ter
    The user whose data the client application wants to access.
 
 3. **OAuth Service Provider**:  
-   The website or application that controls the user’s data and access to it. These providers support OAuth by offering APIs and handling both the authorization server and resource server.
+   The website or application that controls the user's data and access to it. These providers support OAuth by offering APIs and handling both the authorization server and resource server.
 
 4. **Authorization Server**:  
    The server responsible for authenticating the user and issuing the authorization code and tokens.
@@ -62,11 +62,11 @@ Before we dive into how OAuth works, let’s first understand some important ter
 
 ---
 
-Let’s understand this better with an example:
+Let's understand this better with an example:
 
 Imagine you are using a website called **fitmealplanner.com** that helps you plan your meals using your fitness and health data from **Google Fit**.
 
-Here’s how OAuth applies in this scenario:
+Here's how OAuth applies in this scenario:
 
 1. **Client Application**  
    → `fitmealplanner.com`  
@@ -84,11 +84,11 @@ Here’s how OAuth applies in this scenario:
 
 4. **Authorization Server**  
    → `accounts.google.com`  
-   When fitmealplanner.com asks for access, you are redirected to Google’s authorization server where you log in and approve the request. If successful, it issues an **authorization code** (and later, access tokens).
+   When fitmealplanner.com asks for access, you are redirected to Google's authorization server where you log in and approve the request. If successful, it issues an **authorization code** (and later, access tokens).
 
 5. **Resource Server**  
    → `www.googleapis.com/fitness/v1/...`  
-   After obtaining the access token, fitmealplanner.com uses it to request your data from Google Fit’s API, which is served by the resource server.
+   After obtaining the access token, fitmealplanner.com uses it to request your data from Google Fit's API, which is served by the resource server.
 
 6. **Access Token**  
    → A short lived token like:  
@@ -108,12 +108,12 @@ Here’s how OAuth applies in this scenario:
 
 There are multiple ways in which OAuth can be implemented. These are known as **OAuth flows** or **grant types**.
 
-In this blog, we’ll cover a few common ones. The most popular ones are:
+In this blog, we'll cover a few common ones. The most popular ones are:
 
 - **Authorization Code Grant Type**
 - **Implicit Grant Type** (Note: Deprecated in OAuth 2.1)
 
-Now, let’s take a closer look at these OAuth flows (grant types) in more detail.
+Now, let's take a closer look at these OAuth flows (grant types) in more detail.
 
 
 ## Authorization Code Grant Type
@@ -130,10 +130,10 @@ The Authorization Code Grant Type in short follows a two-step process:
 Here's a detailed workflow of it:
 
 ### **Step 1: Client Initiates the Authorization Request**
-- The user interacts with the client (e.g., clicks a “Log in with Google” button on a web app).
-- The client redirects the user’s browser to the authorization server’s **authorization endpoint** with a URL containing the following query parameters:
+- The user interacts with the client (e.g., clicks a "Log in with Google" button on a web app).
+- The client redirects the user's browser to the authorization server's **authorization endpoint** with a URL containing the following query parameters:
   - `response_type=code`: Indicates the client is requesting an authorization code.
-  - `client_id`: The client’s unique identifier.
+  - `client_id`: The client's unique identifier.
   - `redirect_uri`: The URI where the authorization server will redirect the user after authorization.
   - `scope`: The scope of access being requested (e.g., `read_profile`, `write_email`).
   - `state` (optional but recommended): A random string generated by the client to prevent CSRF (Cross-Site Request Forgery) attacks.
@@ -151,13 +151,13 @@ https://authorization-server.com/auth?
 
 ### **Step 2: User Authenticates and Grants Consent**
 - The authorization server presents a login page to the user, where they authenticate (e.g., enter their username and password).
-- After authentication, the authorization server displays a consent screen, asking the user to approve or deny the client’s requested access (e.g., “Allow ClientApp to access your profile?”).
+- After authentication, the authorization server displays a consent screen, asking the user to approve or deny the client's requested access (e.g., "Allow ClientApp to access your profile?").
 - If the user grants consent, the authorization server generates an **authorization code**.
 
 ### **Step 3: Authorization Server Redirects Back to Client**
-- The authorization server redirects the user’s browser to the client’s `redirect_uri`, appending the following query parameters:
+- The authorization server redirects the user's browser to the client's `redirect_uri`, appending the following query parameters:
   - `code`: The authorization code (short-lived, typically valid for a few minutes).
-  - `state`: The same `state` value sent by the client (to verify the request’s integrity).
+  - `state`: The same `state` value sent by the client (to verify the request's integrity).
 
 **Example Redirect URL**:
 ```
@@ -169,12 +169,12 @@ https://client-app.com/callback?
 - The client verifies the `state` parameter to ensure it matches the value sent in Step 1, protecting against CSRF attacks.
 
 ### **Step 4: Client Exchanges Authorization Code for Access Token**
-- The client makes a **POST** request to the authorization server’s **token endpoint** to exchange the authorization code for an access token. This request includes:
+- The client makes a **POST** request to the authorization server's **token endpoint** to exchange the authorization code for an access token. This request includes:
   - `grant_type=authorization_code`: Indicates the grant type being used.
   - `code`: The authorization code received in Step 3.
   - `redirect_uri`: The same redirect URI used in Step 1 (for validation).
-  - `client_id`: The client’s identifier.
-  - `client_secret`: The client’s secret (for confidential clients only).
+  - `client_id`: The client's identifier.
+  - `client_secret`: The client's secret (for confidential clients only).
   - `code_verifier` (optional, for PKCE): Used for public clients (discussed later).
 
 **Example Token Request**:
@@ -220,10 +220,10 @@ Host: resource-server.com
 Authorization: Bearer ghi789
 ```
 
-- The resource server validates the access token and, if valid, returns the requested resource (e.g., the user’s profile data).
+- The resource server validates the access token and, if valid, returns the requested resource (e.g., the user's profile data).
 
 ### **Step 7: Refreshing the Access Token (Optional)**
-- If the access token expires and a refresh token was issued, the client can request a new access token by sending a **POST** request to the authorization server’s token endpoint with:
+- If the access token expires and a refresh token was issued, the client can request a new access token by sending a **POST** request to the authorization server's token endpoint with:
   - `grant_type=refresh_token`
   - `refresh_token`: The refresh token received earlier.
   - `client_id`
@@ -253,7 +253,7 @@ client_secret=secret789
 }
 ```
 
-Now that we’ve understood the Authorization Code flow, let’s look at how it can be made more secure for public clients like mobile and SPA applications using **PKCE (Proof Key for Code Exchange)**.
+Now that we've understood the Authorization Code flow, let's look at how it can be made more secure for public clients like mobile and SPA applications using **PKCE (Proof Key for Code Exchange)**.
 
 ## **PKCE (Proof Key for Code Exchange)**
 The Authorization Code Grant Type can be enhanced with **PKCE** ([RFC 7636](https://datatracker.ietf.org/doc/html/rfc7636)) to make it more secure, especially for public clients (e.g., single-page apps, mobile apps) that cannot securely store a client secret. PKCE prevents authorization code interception attacks by adding an extra layer of verification.
@@ -303,15 +303,15 @@ The Implicit Grant Type is one of the grant types defined in OAuth 2.0, tailored
 
 Unlike the Authorization Code Grant Type, the Implicit Grant does not use:
 
-- A client secret (since it’s designed for public clients).
+- A client secret (since it's designed for public clients).
 - An authorization code (the access token is issued directly).
 - A refresh token (refresh tokens are not supported in this flow).
 
 ### **Step 1: Client Initiates the Authorization Request**
-- The user interacts with the client (e.g., clicks a “Log in with Google” button on a single page app).
-- The client redirects the user’s browser to the authorization server’s **authorization endpoint** with a URL containing the following query parameters:
+- The user interacts with the client (e.g., clicks a "Log in with Google" button on a single page app).
+- The client redirects the user's browser to the authorization server's **authorization endpoint** with a URL containing the following query parameters:
   - `response_type=token`: Indicates the client is requesting an access token directly (the key differentiator of the Implicit Grant).
-  - `client_id`: The client’s unique identifier.
+  - `client_id`: The client's unique identifier.
   - `redirect_uri`: The URI where the authorization server will redirect the user after authorization.
   - `scope`: The scope of access being requested (e.g., `read_profile`, `write_email`).
   - `state` (optional but recommended): A random string generated by the client to prevent CSRF attacks.
@@ -328,15 +328,15 @@ https://authorization-server.com/auth?
 
 ### **Step 2: User Authenticates and Grants Consent**
 - The authorization server presents a login page to the user, where they authenticate (e.g., enter their username and password).
-- After authentication, the authorization server displays a consent screen, asking the user to approve or deny the client’s requested access (e.g., “Allow ClientApp to access your profile?”).
+- After authentication, the authorization server displays a consent screen, asking the user to approve or deny the client's requested access (e.g., "Allow ClientApp to access your profile?").
 - If the user grants consent, the authorization server generates an **access token**.
 
 ### **Step 3: Authorization Server Redirects Back to Client with Access Token**
-- The authorization server redirects the user’s browser to the client’s `redirect_uri`, appending the access token and other parameters in the **URL fragment** (not the query string, to prevent the token from being sent to the server automatically). The response includes:
+- The authorization server redirects the user's browser to the client's `redirect_uri`, appending the access token and other parameters in the **URL fragment** (not the query string, to prevent the token from being sent to the server automatically). The response includes:
   - `access_token`: The token used to access protected resources.
   - `token_type`: The type of token (usually `Bearer`).
   - `expires_in`: The lifetime of the access token in seconds (e.g., 3600 for 1 hour).
-  - `state`: The same `state` value sent by the client (to verify the request’s integrity).
+  - `state`: The same `state` value sent by the client (to verify the request's integrity).
   - `scope` (optional): The granted scope, if different from the requested scope.
 
 **Example Redirect URL**:
@@ -371,7 +371,7 @@ Host: resource-server.com
 Authorization: Bearer ghi789
 ```
 
-- The resource server validates the access token and, if valid, returns the requested resource (e.g., the user’s profile data).
+- The resource server validates the access token and, if valid, returns the requested resource (e.g., the user's profile data).
 
 ### **Step 6: No Refresh Tokens**
 - The Implicit Grant Type does **not** issue refresh tokens. If the access token expires, the client must restart the authorization process by redirecting the user to the authorization server again.
@@ -394,10 +394,10 @@ Unlike other OAuth 2.0 grant types (e.g., Authorization Code or Implicit), the C
 - A refresh token, as access tokens are typically short-lived, and the client can request a new one directly.
 
 ### **Step 1: Client Authenticates and Requests an Access Token**
-- The client sends a **POST** request to the authorization server’s **token endpoint** to obtain an access token. The request includes:
+- The client sends a **POST** request to the authorization server's **token endpoint** to obtain an access token. The request includes:
   - `grant_type=client_credentials`: Indicates the Client Credentials Grant Type.
-  - `client_id`: The client’s unique identifier.
-  - `client_secret`: The client’s secret for authentication (required for confidential clients).
+  - `client_id`: The client's unique identifier.
+  - `client_secret`: The client's secret for authentication (required for confidential clients).
   - `scope` (optional): The scope of access being requested (e.g., `read_metrics`, `write_data`).
 
 - The client authenticates itself using one of the following methods:
@@ -429,7 +429,7 @@ scope=read_metrics
 ```
 
 ### **Step 2: Authorization Server Validates and Issues Access Token**
-- The authorization server validates the client’s credentials (`client_id` and `client_secret`).
+- The authorization server validates the client's credentials (`client_id` and `client_secret`).
 - It checks whether the client is authorized to request the specified `scope` (if provided).
 - If the request is valid, the authorization server responds with a JSON object containing:
   - `access_token`: The token used to access protected resources.
@@ -457,7 +457,7 @@ Host: resource-server.com
 Authorization: Bearer ghi789
 ```
 
-- The resource server validates the access token (e.g., by introspecting it with the authorization server or verifying its signature if it’s a JWT) and, if valid, returns the requested resource (e.g., system metrics).
+- The resource server validates the access token (e.g., by introspecting it with the authorization server or verifying its signature if it's a JWT) and, if valid, returns the requested resource (e.g., system metrics).
 
 ### **Step 4: Requesting a New Access Token (If Expired)**
 - The Client Credentials Grant does **not** issue refresh tokens. If the access token expires, the client simply repeats the process by sending a new token request to the authorization server with its credentials.
@@ -472,24 +472,24 @@ Authorization: Bearer ghi789
 _From Microsoft_
 
 
-The Resource Owner Password Credentials Grant Type (often referred to as the Password Grant) is an OAuth 2.0 grant type that allows a client application to obtain an access token by directly using the resource owner’s (user’s) credentials, typically a username and password. This grant type is designed for scenarios where the client is highly trusted by the resource owner, such as first-party applications (e.g., a company’s own applications or mobile app accessing its own API). However, due to significant security concerns, it is considered deprecated in OAuth 2.1 and is only recommended for use in specific, controlled environments where other grant types (e.g., Authorization Code Grant with PKCE) are not feasible.
+The Resource Owner Password Credentials Grant Type (often referred to as the Password Grant) is an OAuth 2.0 grant type that allows a client application to obtain an access token by directly using the resource owner's (user's) credentials, typically a username and password. This grant type is designed for scenarios where the client is highly trusted by the resource owner, such as first-party applications (e.g., a company's own applications or mobile app accessing its own API). However, due to significant security concerns, it is considered deprecated in OAuth 2.1 and is only recommended for use in specific, controlled environments where other grant types (e.g., Authorization Code Grant with PKCE) are not feasible.
 
 Unlike the Authorization Code Grant, the Resource Owner Password Grant Type does not involve:
 
 A redirect URI, as there are no browser-based redirects.
 An authorization code, since the access token is issued directly.
-User interaction with the authorization server’s consent screen, as the client collects the user’s credentials.
+User interaction with the authorization server's consent screen, as the client collects the user's credentials.
 
 ### **Step 1: Client Collects User Credentials**
 - The client prompts the user to enter their username and password, typically through a login form in the application (e.g., a mobile app or desktop application login screen).
 - The client securely handles these credentials and prepares to send them to the authorization server.
 
 ### **Step 2: Client Requests an Access Token**
-- The client sends a **POST** request to the authorization server’s **token endpoint**, including the user’s credentials and its own authentication details. The request includes:
+- The client sends a **POST** request to the authorization server's **token endpoint**, including the user's credentials and its own authentication details. The request includes:
   - `grant_type=password`: Indicates the Resource Owner Password Credentials Grant Type.
-  - `username`: The resource owner’s username or identifier.
-  - `password`: The resource owner’s password.
-  - `client_id`: The client’s unique identifier.
+  - `username`: The resource owner's username or identifier.
+  - `password`: The resource owner's password.
+  - `client_id`: The client's unique identifier.
   - `client_secret` (optional): Required for confidential clients to authenticate themselves.
   - `scope` (optional): The scope of access being requested (e.g., `read_profile`).
 
@@ -527,8 +527,8 @@ scope=read_profile
 
 ### **Step 3: Authorization Server Validates and Issues Access Token**
 - The authorization server validates:
-  - The user’s `username` and `password` against its authentication system.
-  - The client’s credentials (`client_id` and `client_secret`, if provided).
+  - The user's `username` and `password` against its authentication system.
+  - The client's credentials (`client_id` and `client_secret`, if provided).
   - The requested `scope`, ensuring the client is authorized for the specified access.
 - If the request is valid, the authorization server responds with a JSON object containing:
   - `access_token`: The token used to access protected resources.
@@ -558,7 +558,7 @@ Host: resource-server.com
 Authorization: Bearer ghi789
 ```
 
-- The resource server validates the access token (e.g., via introspection or JWT verification) and, if valid, returns the requested resource (e.g., the user’s profile data).
+- The resource server validates the access token (e.g., via introspection or JWT verification) and, if valid, returns the requested resource (e.g., the user's profile data).
 
 ### **Step 5: Refreshing the Access Token (Optional)**
 - If a `refresh_token` was issued, the client can use it to request a new access token when the current one expires by sending a **POST** request to the token endpoint with:
@@ -593,11 +593,11 @@ client_secret=secret789
 
 ---
 
-Now that we’ve seen in detail how OAuth 2.0 works and explored its common grant types, it’s also important to briefly touch on a related concept which is **OpenID Connect (OIDC)**.
+Now that we've seen in detail how OAuth 2.0 works and explored its common grant types, it's also important to briefly touch on a related concept which is **OpenID Connect (OIDC)**.
 
 OAuth 2.0 and OpenID Connect (OIDC) are closely related but serve **different purposes**. OAuth 2.0 is an **authorization framework**, whereas OIDC is an **authentication protocol** built on top of OAuth 2.0.
 
-A key difference is that **OAuth 2.0 does not handle user identity** and it only deals with granting access to resources. If you’re using a feature like “Login with Google,” what you’re actually using is **OpenID Connect**, not plain OAuth. OIDC extends OAuth 2.0 by adding an identity layer, allowing clients to verify the identity of the user and retrieve basic profile information.
+A key difference is that **OAuth 2.0 does not handle user identity** and it only deals with granting access to resources. If you're using a feature like "Login with Google," what you're actually using is **OpenID Connect**, not plain OAuth. OIDC extends OAuth 2.0 by adding an identity layer, allowing clients to verify the identity of the user and retrieve basic profile information.
 
 ![OAuth vs OIDC](assets/img/diagrams/writeup_eight/oauth-oidc.jpg)
 
@@ -607,7 +607,7 @@ We'll dive deeper into **OpenID Connect** and how it works in a future blog post
 
 ---
 
-Now that we’ve covered the internals of OAuth 2.0 and the grant types, let’s take a look at some **best practices** you should follow while implementing OAuth and the reasons why they matter.
+Now that we've covered the internals of OAuth 2.0 and the grant types, let's take a look at some **best practices** you should follow while implementing OAuth and the reasons why they matter.
 
 ## Best Practices
 
@@ -640,13 +640,13 @@ For example,
 
 ## Final Thoughts
 
-That’s it for this one.
+That's it for this one.
 
 I hope this blog helped you get a solid understanding of what OAuth 2.0 is, how it works and the key concepts behind it.
 
-If anything felt confusing or you think I missed something, feel free to drop a message or comment. I’m still learning too, so if you spot anything wrong or have suggestions to improve this write-up, feel free to reach out. Feedback is always welcome and helps us grow together.
+If anything felt confusing or you think I missed something, feel free to drop a message or comment. I'm still learning too, so if you spot anything wrong or have suggestions to improve this write-up, feel free to reach out. Feedback is always welcome and helps us grow together.
 
-Next up, I’ll cover the security side of OAuth (the vulnerabilities, common mistakes and how attackers exploit them). That’s where things get really interesting.
+Next up, I'll cover the security side of OAuth (the vulnerabilities, common mistakes and how attackers exploit them). That's where things get really interesting.
 
 If you're into cyber security or just getting started, follow Security Mates for more write-ups and breakdowns like this.
 
